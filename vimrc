@@ -81,7 +81,7 @@ set incsearch
 set ignorecase
 set smartcase
 " Clear search highlighting.
-map <Leader><Space> :hohl<CR>
+map <Leader><Space> :nohl<CR>
 " }}}
 
 " {{{ Spell check
@@ -131,6 +131,12 @@ au FileType mustache setl textwidth=120 softtabstop=2 shiftwidth=2 tabstop=2 exp
 
 " Coffeescript uses 2 spaces too.
 au FileType coffee setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab colorcolumn=80
+" }}}
+
+" {{{ syntastic
+let g:syntastic_check_on_open=0
+let g:syntastic_enable_signs=1
+let g:syntastic_php_checkers=['php']
 " }}}
 
 " {{{ vim-airline
