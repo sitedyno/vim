@@ -143,3 +143,6 @@ let g:syntastic_php_checkers=['php']
 let g:airline_powerline_fonts = 1
 " }}}
 
+" {{{ vim-nerdtree-tabs
+let g:nerdtree_tabs_open_on_console_startup=1
+" }}}
