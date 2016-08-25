@@ -15,6 +15,9 @@ update:
 	git submodule foreach git pull origin master
 
 symlink:
-	cd ~ && ln -sf .vim/vimrc ~/.vimrc
-	cd ~ && ln -sf .vim/gvimrc ~/.gvimrc
+	ln -sf ~/.vim/vimrc ~/.vimrc
+	ln -sf ~/.vim/gvimrc ~/.gvimrc
+	if [ ! -e ~/.config ]; then mkdir ~/.config; fi
+	if [ ! -e ~/.config/nvim ]; then ln -sf ~/.vim ~/.config/nvim; fi
+	ln -sf ~/.vimrc ~/.config/nvim/init.vim
 
