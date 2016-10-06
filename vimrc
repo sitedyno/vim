@@ -85,11 +85,11 @@ map <Leader><Space> :nohl<CR>
 " }}}
 
 " {{{ Spell check
-set spell spelllang=en_us
-hi SpellBad cterm=underline
-hi clear SpellCap
-hi clear SpellLocal
-hi clear SpellRare
+"set spell spelllang=en_us
+"hi SpellBad cterm=underline
+"hi clear SpellCap
+"hi clear SpellLocal
+"hi clear SpellRare
 " }}}
 
 " {{{ Filetypes
