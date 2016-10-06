@@ -150,3 +150,8 @@ let g:airline_powerline_fonts = 1
 " {{{ vim-nerdtree-tabs
 let g:nerdtree_tabs_open_on_console_startup=1
 " }}}
+
+" {{{ custom commands
+" open a terminal at the bottom of the window
+command Layout1 sp | wincmd w | wincmd J | te
+" }}}
