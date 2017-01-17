@@ -5,6 +5,13 @@ set nocompatible
 execute pathogen#infect()
 execute pathogen#helptags()
 
+" {{{ Reload vimrc
+augroup reload_vimrc
+    autocmd!
+    autocmd BufWritePost ~/.vim/vimrc source ~/.vim/vimrc
+augroup END
+" }}}
+
 " {{{ Window and editor setup
 let mapleader=','
 " Display line numbers and rulers.
@@ -12,7 +19,11 @@ set number
 syntax on
 
 " Set encoding
-set encoding=utf-8
+" NeoVim will throw an error when auto reloading vimrc/init
+" as encoding shouldn't change after startup
+" Apparently this setting is controversial:
+" https://groups.google.com/forum/#!msg/vim_dev/up1KslPRGzk/9xwHeIb6WWgJ
+silent! set encoding=utf-8
 
 " Use 256 colors
 set t_Co=256
@@ -155,8 +166,22 @@ let g:nerdtree_tabs_open_on_console_startup=0
 let g:loaded_ctrlp = 1 " 1 = disabled
 " }}}
 
+" {{{ FZF
+" https://github.com/junegunn/dotfiles/blob/master/vimrc#L1721-L1761
+nnoremap <silent> <expr> <Leader><Leader> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<cr>"
+nnoremap <silent> <Leader>C        :Colors<CR>
+nnoremap <silent> <Leader><Enter>  :Buffers<CR>
+nnoremap <silent> <Leader>ag       :Ag <C-R><C-W><CR>
+nnoremap <silent> <Leader>AG       :Ag <C-R><C-A><CR>
+xnoremap <silent> <Leader>ag       y:Ag <C-R>"<CR>
+nnoremap <silent> <Leader>`        :Marks<CR>
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+nmap <leader><tab> <plug>(fzf-maps-n)
+" }}}
+
 " {{{ custom commands
 " open a terminal at the bottom of the window
-command Layout1 sp | wincmd w | wincmd J | te
+command! Layout1 sp | wincmd w | wincmd J | te
 " }}}
 
