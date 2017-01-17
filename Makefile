@@ -6,13 +6,14 @@ help:
 	@echo "install - install bundles and compile things if needed."
 	@echo "update - Git pull updates for all bundles."
 
-install: symlink submodules
+install: symlink submodules fzf
 
 submodules:
 	git submodule update --init
 
 update:
 	git submodule foreach git pull origin master
+	if [ -e ~/.fzf ]; then cd ~/.fzf && git pull && ./install --all; fi
 
 symlink:
 	ln -sf ~/.vim/vimrc ~/.vimrc
@@ -21,3 +22,6 @@ symlink:
 	if [ ! -e ~/.config/nvim ]; then ln -sf ~/.vim ~/.config/nvim; fi
 	ln -sf ~/.vimrc ~/.config/nvim/init.vim
 
+fzf:
+	if [ ! -e ~/.fzf ]; then git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf; fi
+	~/.fzf/install --all
