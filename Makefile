@@ -25,3 +25,4 @@ symlink:
 fzf:
 	if [ ! -e ~/.fzf ]; then git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf; fi
 	~/.fzf/install --all
+	ln -sf ~/.fzf ~/.vim/bundle/fzf
