@@ -64,3 +64,6 @@
 [submodule "bundle/fzf.vim"]
 	path = bundle/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
+[submodule "bundle/bufexplorer.vim"]
+	path = bundle/bufexplorer.vim
+	url = https://github.com/jlanzarotta/bufexplorer.git
