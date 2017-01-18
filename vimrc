@@ -171,13 +171,20 @@ let g:loaded_ctrlp = 1 " 1 = disabled
 nnoremap <silent> <expr> <Leader><Leader> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<cr>"
 nnoremap <silent> <Leader>C        :Colors<CR>
 nnoremap <silent> <Leader><Enter>  :Buffers<CR>
-nnoremap <silent> <Leader>ag       :Ag <C-R><C-W><CR>
-nnoremap <silent> <Leader>AG       :Ag <C-R><C-A><CR>
-xnoremap <silent> <Leader>ag       y:Ag <C-R>"<CR>
-nnoremap <silent> <Leader>`        :Marks<CR>
+"nnoremap <silent> <Leader>ag       :Ag <C-R><C-W><CR>
+"nnoremap <silent> <Leader>AG       :Ag <C-R><C-A><CR>
+"xnoremap <silent> <Leader>ag       y:Ag <C-R>"<CR>
+"nnoremap <silent> <Leader>`        :Marks<CR>
+
+"inoremap <expr> <c-x><c-t> fzf#complete('tmuxwords.rb --all-but-current --scroll 500 --min 5')
+"imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
+"imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
+
 nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
 " }}}
 
 " {{{ custom commands
