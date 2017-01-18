@@ -168,6 +168,9 @@ let g:loaded_ctrlp = 1 " 1 = disabled
 
 " {{{ FZF
 " https://github.com/junegunn/dotfiles/blob/master/vimrc#L1721-L1761
+if has('nvim')
+    let $FZF_DEFAULT_OPTS .= ' --inline-info'
+endif
 nnoremap <silent> <expr> <Leader><Leader> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<cr>"
 nnoremap <silent> <Leader>C        :Colors<CR>
 nnoremap <silent> <Leader><Enter>  :Buffers<CR>

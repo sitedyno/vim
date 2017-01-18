@@ -33,11 +33,11 @@ Command | Mode   | Description
 `,bs`   | normal | horizontal split (opens below)
 `,bv`   | normal | vertical split (opens to the right)
 
-Enter to view a buffer. Pressing t on selected buffer will open it in a tab.
+Enter to view a buffer. Pressing `t` on selected buffer will open it in a tab.
 
 ### FZF
 
-Fuzzy finder for files or buffer lines. Use `<c-j>` and `<c-k>` to navigate in the FZF results if needed.
+Fuzzy finder for files or buffer lines.
 
 Command      | Mode   | Description
 -------      | ----   | -----------
@@ -47,3 +47,5 @@ Command      | Mode   | Description
 `<c-x><c-f>` | insert | complete a path
 `<c-x><c-l>` | insert | complete a line
 `,<tab>`     | n,v,o  | see mappings for the current mode
+
+Use `<c-j>` and `<c-k>` to navigate in the FZF results if needed.
