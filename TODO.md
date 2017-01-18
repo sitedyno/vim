@@ -14,3 +14,8 @@
 
 - [ ] Learn about Ag and how to use it w/ FZF
 - [ ] Learn about using marks w/ FZF
+
+#### Surround
+
+- [ ] Learn more ways to use surround ie: ysiw
+

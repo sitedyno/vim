@@ -49,3 +49,15 @@ Command      | Mode   | Description
 `,<tab>`     | n,v,o  | see mappings for the current mode
 
 Use `<c-j>` and `<c-k>` to navigate in the FZF results if needed.
+
+### Surround
+
+Easily delete, change and add surrounding parentheses, brackets, quotes, XML tags, and more.
+
+Command  | Mode   | Description
+-------  | ----   | -----------
+`cs"'`   | normal | change surround dquotes `"Hello World"` to squotes `'Hello World'`
+`cs'<q>` | normal | change surround squotes `'Hello World'` to tags `<q>Hello World</q>`
+`cst"`   | normal | change surround tags `<q>Hello World</q>` to dquotes `"Hello World"`
+`ds"`    | normal | delete surround dquotes `"Hello World"` to `Hello World`
+
