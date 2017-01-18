@@ -1,6 +1,10 @@
 # Vim cheat sheet
 
-I find it so easy to forget a plugin or how to do useful things in vim. This is an effort to rectify that.
+My current vim configuration. Trying to use neovim where possible.
+
+As for the cheat sheet bit; I find it so easy to forget a plugin or how to do useful things in vim. This is an effort to rectify that.
+
+Currently `<leader>` is `,`.
 
 ## General vim stuff
 
