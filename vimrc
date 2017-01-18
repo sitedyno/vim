@@ -146,6 +146,10 @@ au FileType mustache setl textwidth=120 softtabstop=2 shiftwidth=2 tabstop=2 exp
 
 " Coffeescript uses 2 spaces too.
 au FileType coffee setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab colorcolumn=80
+
+" markdown settings
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+au FileType markdown setl softtabstop=4 shiftwidth=4 tabstop=4 textwidth=90 expandtab colorcolumn=79
 " }}}
 
 " {{{ syntastic
@@ -156,6 +160,11 @@ let g:syntastic_php_checkers=['php']
 
 " {{{ vim-airline
 let g:airline_powerline_fonts = 1
+" }}}
+
+" {{{ markdown
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'php', 'javascript']
+let g:markdown_syntax_conceal = 1
 " }}}
 
 " {{{ vim-nerdtree-tabs

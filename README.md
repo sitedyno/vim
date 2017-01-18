@@ -2,7 +2,8 @@
 
 My current vim configuration. Trying to use neovim where possible.
 
-As for the cheat sheet bit; I find it so easy to forget a plugin or how to do useful things in vim. This is an effort to rectify that.
+As for the cheat sheet bit; I find it so easy to forget a plugin or how to do
+useful things in vim. This is an effort to rectify that.
 
 Currently `<leader>` is `,`.
 
@@ -52,7 +53,8 @@ Use `<c-j>` and `<c-k>` to navigate in the FZF results if needed.
 
 ### Surround
 
-Easily delete, change and add surrounding parentheses, brackets, quotes, XML tags, and more.
+Easily delete, change and add surrounding parentheses, brackets, quotes,
+XML tags, and more.
 
 Command  | Mode   | Description
 -------  | ----   | -----------
