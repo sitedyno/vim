@@ -9,6 +9,17 @@ Currently `<leader>` is `,`.
 
 ## General vim stuff
 
+### Folding
+
+Command | Mode   | Description
+------- | ----   | -----------
+`za`    | normal | Toggle one level of folding where the cursor is
+`zA`    | normal | Toggle all levels of folding where the cursor is
+`zr`    | normal | Opens one level of folding throught the buffer
+`zR`    | normal | Opens all folding throughout the buffer
+`zm`    | normal | Closes one level of folding throughout the buffer
+`zM`    | normal | Closes all folding throughout the buffer
+
 ### Mapping keys
 
 Keep in mind that you can use :map to view mappings!
