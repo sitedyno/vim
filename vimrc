@@ -5,6 +5,14 @@ set nocompatible
 execute pathogen#infect()
 execute pathogen#helptags()
 
+" {{{ OS detection
+if has('win32')
+    let s:uname = 'win32'
+else
+    let s:uname = system("uname -s")
+endif
+" }}}
+
 " {{{ Reload vimrc
 augroup reload_vimrc
     autocmd!
@@ -172,31 +180,39 @@ let g:nerdtree_tabs_open_on_console_startup=0
 " }}}
 
 " {{{ CtrlP
-let g:loaded_ctrlp = 1 " 1 = disabled
+if s:uname == "Linux"
+    let g:loaded_ctrlp = 1 " 1 = disabled
+else
+    let g:loaded_ctrlp = 0
+    nnoremap <silent> <Leader><Leader> :CtrlPMixed<CR>
+    nnoremap <silent> <Leader><Enter> :CtrlPBuffers<CR>
+endif
 " }}}
 
 " {{{ FZF
 " https://github.com/junegunn/dotfiles/blob/master/vimrc#L1721-L1761
-if has('nvim')
-    let $FZF_DEFAULT_OPTS .= ' --inline-info'
+if s:uname == "Linux"
+    if has('nvim')
+        let $FZF_DEFAULT_OPTS .= ' --inline-info'
+    endif
+    nnoremap <silent> <expr> <Leader><Leader> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<cr>"
+    nnoremap <silent> <Leader>C        :Colors<CR>
+    nnoremap <silent> <Leader><Enter>  :Buffers<CR>
+    "nnoremap <silent> <Leader>ag       :Ag <C-R><C-W><CR>
+    "nnoremap <silent> <Leader>AG       :Ag <C-R><C-A><CR>
+    "xnoremap <silent> <Leader>ag       y:Ag <C-R>"<CR>
+    "nnoremap <silent> <Leader>`        :Marks<CR>
+
+    "inoremap <expr> <c-x><c-t> fzf#complete('tmuxwords.rb --all-but-current --scroll 500 --min 5')
+    "imap <c-x><c-k> <plug>(fzf-complete-word)
+    imap <c-x><c-f> <plug>(fzf-complete-path)
+    "imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+    imap <c-x><c-l> <plug>(fzf-complete-line)
+
+    nmap <leader><tab> <plug>(fzf-maps-n)
+    xmap <leader><tab> <plug>(fzf-maps-x)
+    omap <leader><tab> <plug>(fzf-maps-o)
 endif
-nnoremap <silent> <expr> <Leader><Leader> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<cr>"
-nnoremap <silent> <Leader>C        :Colors<CR>
-nnoremap <silent> <Leader><Enter>  :Buffers<CR>
-"nnoremap <silent> <Leader>ag       :Ag <C-R><C-W><CR>
-"nnoremap <silent> <Leader>AG       :Ag <C-R><C-A><CR>
-"xnoremap <silent> <Leader>ag       y:Ag <C-R>"<CR>
-"nnoremap <silent> <Leader>`        :Marks<CR>
-
-"inoremap <expr> <c-x><c-t> fzf#complete('tmuxwords.rb --all-but-current --scroll 500 --min 5')
-"imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-"imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-imap <c-x><c-l> <plug>(fzf-complete-line)
-
-nmap <leader><tab> <plug>(fzf-maps-n)
-xmap <leader><tab> <plug>(fzf-maps-x)
-omap <leader><tab> <plug>(fzf-maps-o)
 " }}}
 
 " {{{ custom commands
