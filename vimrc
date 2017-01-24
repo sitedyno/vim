@@ -9,7 +9,7 @@ execute pathogen#helptags()
 if has('win32')
     let s:uname = 'win32'
 else
-    let s:uname = system("uname -s")
+    let s:uname = system("echo -n \"$(uname)\"")
 endif
 " }}}
 
