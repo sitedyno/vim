@@ -73,4 +73,5 @@ Command  | Mode   | Description
 `cs'<q>` | normal | change surround squotes `'Hello World'` to tags `<q>Hello World</q>`
 `cst"`   | normal | change surround tags `<q>Hello World</q>` to dquotes `"Hello World"`
 `ds"`    | normal | delete surround dquotes `"Hello World"` to `Hello World`
-
+`ysiw]`  | normal | add surround brackets `Hello World` to `[Hello] World` (iw is a text
+object)
