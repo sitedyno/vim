@@ -159,6 +159,9 @@ au FileType coffee setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab colorcolu
 " markdown settings
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 au FileType markdown setl softtabstop=4 shiftwidth=4 tabstop=4 textwidth=90 expandtab colorcolumn=79
+
+" xml settings
+au FileType xml setl softtabstop=8 shiftwidth=8 tabstop=8 textwidth=90 expandtab colorcolumn=79
 " }}}
 
 " {{{ syntastic
