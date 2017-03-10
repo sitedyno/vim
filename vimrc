@@ -25,6 +25,8 @@ let mapleader=','
 " Display line numbers and rulers.
 set number
 syntax on
+" https://github.com/neovim/neovim/issues/5938
+set mouse=a
 
 " Set encoding
 " NeoVim will throw an error when auto reloading vimrc/init
@@ -218,6 +220,10 @@ if s:uname == "Linux"
     omap <leader><tab> <plug>(fzf-maps-o)
 endif
 " }}}
+
+" {{{ deoplete
+let g:deoplete#enable_at_startup = 1
+"}}}
 
 " {{{ custom commands
 " open a terminal at the bottom of the window
