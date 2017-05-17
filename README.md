@@ -13,6 +13,8 @@ Currently `<leader>` is `,`.
 
 Command | Mode   | Description
 ------- | ----   | -----------
+`zj`    | normal | Move down to the next fold
+`zk`    | normal | Move up to the next fold
 `za`    | normal | Toggle one level of folding where the cursor is
 `zA`    | normal | Toggle all levels of folding where the cursor is
 `zr`    | normal | Opens one level of folding throught the buffer
