@@ -81,6 +81,10 @@ set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,*.pyc,node_modul
 " {{{ Colors
 " Default color scheme
 color badwolf
+hi Folded guibg=NONE ctermbg=NONE
+hi LineNr guibg=NONE ctermbg=NONE
+hi NonText guibg=NONE ctermbg=NONE
+hi Normal guibg=NONE ctermbg=NONE
 " }}}
 
 " {{{ Swap files and undos
