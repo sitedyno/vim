@@ -137,6 +137,8 @@ au BufRead,BufNewFile {*.mustache,*.hbs}  set ft=mustache
 
 " make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
 au FileType python setl softtabstop=4 shiftwidth=4 tabstop=4 textwidth=90 expandtab colorcolumn=79
+" jinja the same as python for tabs
+au FileType jinja setl softtabstop=4 shiftwidth=4 tabstop=4 expandtab
 au FileType rst setl textwidth=80 expandtab colorcolumn=81
 
 " Make ruby,scss,sass use 2 spaces for indentation.
