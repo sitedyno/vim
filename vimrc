@@ -7,21 +7,15 @@ execute pathogen#helptags()
 
 " {{{ vim-plug
 call plug#begin('~/.vim/vim-plugins')
-" assuming your using vim-plug: https://github.com/junegunn/vim-plug
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
+
+" {{{ ncm2
+Plug 'ncm2/ncm2' | Plug 'roxma/nvim-yarp'
 
 " enable ncm2 for all buffers
 autocmd BufEnter * call ncm2#enable_for_buffer()
 
 " IMPORTANTE: :help Ncm2PopupOpen for more information
 set completeopt=noinsert,menuone,noselect
-
-" NOTE: you need to install completion sources to get completions. Check
-" our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-tmux'
-Plug 'ncm2/ncm2-path'
 
 " suppress the annoying 'match x of y', 'The only match' and 'Pattern not
 " found' messages
@@ -38,8 +32,19 @@ inoremap <c-c> <ESC>
 " Use <TAB> to select the popup menu:
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" }}}
 
-" based on ultisnips
+" {{{ ncm2 - misc completions
+
+" NOTE: you need to install completion sources to get completions. Check
+" our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-tmux'
+Plug 'ncm2/ncm2-path'
+" }}}
+
+" {{{ ncm2-ultisnips
+" ultisnips enables argument hinting in ncm2
 Plug 'ncm2/ncm2-ultisnips'
 Plug 'SirVer/ultisnips'
 
@@ -52,9 +57,27 @@ let g:UltiSnipsExpandTrigger            = "<Plug>(ultisnips_expand)"
 let g:UltiSnipsJumpForwardTrigger       = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger      = "<c-k>"
 let g:UltiSnipsRemoveSelectModeMappings = 0
+" }}}
 
+" {{{ ncm2-phpactor
 Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
 Plug 'phpactor/ncm2-phpactor'
+" }}}
+
+" {{{ vim-airline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+let g:airline_powerline_fonts = 1
+" }}}
+
+" {{{ Plugins without configuration
+Plug 'flazz/vim-colorschemes'
+Plug 'scrooloose/nerdcommenter'
+Plug 'Townk/vim-autoclose'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
+" }}}
+
 call plug#end()
 " }}}
 
@@ -231,17 +254,9 @@ let g:syntastic_enable_signs=1
 let g:syntastic_php_checkers=['php']
 " }}}
 
-" {{{ vim-airline
-let g:airline_powerline_fonts = 1
-" }}}
-
 " {{{ markdown
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'php', 'javascript']
 let g:markdown_syntax_conceal = 1
-" }}}
-
-" {{{ vim-nerdtree-tabs
-let g:nerdtree_tabs_open_on_console_startup=0
 " }}}
 
 " {{{ FZF
