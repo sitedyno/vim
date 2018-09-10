@@ -1,3 +1,4 @@
 backup/*
 init.vim
 bundle/fzf
+vim-plugins/*
