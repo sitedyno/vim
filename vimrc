@@ -70,6 +70,12 @@ Plug 'vim-airline/vim-airline-themes'
 let g:airline_powerline_fonts = 1
 " }}}
 
+" {{{ vim-markdown
+Plug 'tpope/vim-markdown'
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'php', 'javascript']
+let g:markdown_syntax_conceal = 1
+" }}}
+
 " {{{ Plugins without configuration
 Plug 'flazz/vim-colorschemes'
 Plug 'scrooloose/nerdcommenter'
@@ -207,14 +213,8 @@ au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set f
 " Map .twig files as jinja templates
 au BufRead,BufNewFile *.twig,*.tpl  set ft=htmljinja
 
-" Map *.coffee to coffee type
-au BufRead,BufNewFile *.coffee  set ft=coffee
-
 " Highlight JSON & es6 like Javascript
 au BufNewFile,BufRead {*.json,*.es6} set ft=javascript
-
-" hbs and mustache files.
-au BufRead,BufNewFile {*.mustache,*.hbs}  set ft=mustache
 
 " make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
 au FileType python setl softtabstop=4 shiftwidth=4 tabstop=4 textwidth=90 expandtab colorcolumn=79
@@ -235,12 +235,6 @@ au filetype go setl textwidth=120 softtabstop=4 shiftwidth=4 tabstop=4 noexpandt
 " Javascript settings
 au FileType javascript setl textwidth=120 softtabstop=2 shiftwidth=2 tabstop=2 expandtab colorcolumn=120
 
-" Hbs settings
-au FileType mustache setl textwidth=120 softtabstop=2 shiftwidth=2 tabstop=2 expandtab colorcolumn=120
-
-" Coffeescript uses 2 spaces too.
-au FileType coffee setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab colorcolumn=80
-
 " markdown settings
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 au FileType markdown setl softtabstop=4 shiftwidth=4 tabstop=4 textwidth=90 expandtab colorcolumn=79
@@ -253,11 +247,6 @@ au FileType xml setl softtabstop=8 shiftwidth=8 tabstop=8 textwidth=90 expandtab
 let g:syntastic_check_on_open=0
 let g:syntastic_enable_signs=1
 let g:syntastic_php_checkers=['php']
-" }}}
-
-" {{{ markdown
-let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'php', 'javascript']
-let g:markdown_syntax_conceal = 1
 " }}}
 
 " {{{ FZF
