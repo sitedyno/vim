@@ -76,6 +76,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'Townk/vim-autoclose'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
+Plug 'wincent/loupe'
 " }}}
 
 call plug#end()
