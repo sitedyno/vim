@@ -85,7 +85,9 @@ Plug 'StanAngeloff/php.vim'
 Plug 'Townk/vim-autoclose'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
+Plug 'tpope/vim-surround'
 Plug 'wincent/loupe'
+Plug 'w0rp/ale'
 " }}}
 
 call plug#end()
@@ -244,12 +246,6 @@ au FileType markdown setl softtabstop=4 shiftwidth=4 tabstop=4 textwidth=90 expa
 
 " xml settings
 au FileType xml setl softtabstop=8 shiftwidth=8 tabstop=8 textwidth=90 expandtab colorcolumn=79
-" }}}
-
-" {{{ syntastic
-let g:syntastic_check_on_open=0
-let g:syntastic_enable_signs=1
-let g:syntastic_php_checkers=['php']
 " }}}
 
 " {{{ FZF
