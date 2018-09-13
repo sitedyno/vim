@@ -77,8 +77,11 @@ let g:markdown_syntax_conceal = 1
 " }}}
 
 " {{{ Plugins without configuration
+Plug '2072/PHP-Indenting-for-VIm'
 Plug 'flazz/vim-colorschemes'
 Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'StanAngeloff/php.vim'
 Plug 'Townk/vim-autoclose'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
