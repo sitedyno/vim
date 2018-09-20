@@ -36,19 +36,6 @@ Keep in mind that you can use :map to view mappings!
 
 ## Plugins
 
-### BufExplorer
-
-Streamlined buffer listing and selection.
-
-Command | Mode   | Description
-------- | ----   | -----------
-`,be`   | normal | open BufExplorer buffer list
-`,bt`   | normal | toggle BufExplorer buffer list
-`,bs`   | normal | horizontal split (opens below)
-`,bv`   | normal | vertical split (opens to the right)
-
-Enter to view a buffer. Pressing `t` on selected buffer will open it in a tab.
-
 ### FZF
 
 Fuzzy finder for files or buffer lines.
