@@ -15,29 +15,6 @@ call plug#begin('~/.vim/vim-plugins')
 " {{{ fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" https://github.com/junegunn/dotfiles/blob/master/vimrc#L1721-L1761
-if s:uname == "Linux"
-    if has('nvim')
-        let $FZF_DEFAULT_OPTS .= ' --inline-info'
-    endif
-    nnoremap <silent> <expr> <Leader><Leader> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<cr>"
-    nnoremap <silent> <Leader>C        :Colors<CR>
-    nnoremap <silent> <Leader><Enter>  :Buffers<CR>
-    "nnoremap <silent> <Leader>ag       :Ag <C-R><C-W><CR>
-    "nnoremap <silent> <Leader>AG       :Ag <C-R><C-A><CR>
-    "xnoremap <silent> <Leader>ag       y:Ag <C-R>"<CR>
-    "nnoremap <silent> <Leader>`        :Marks<CR>
-
-    "inoremap <expr> <c-x><c-t> fzf#complete('tmuxwords.rb --all-but-current --scroll 500 --min 5')
-    "imap <c-x><c-k> <plug>(fzf-complete-word)
-    imap <c-x><c-f> <plug>(fzf-complete-path)
-    "imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-    imap <c-x><c-l> <plug>(fzf-complete-line)
-
-    nmap <leader><tab> <plug>(fzf-maps-n)
-    xmap <leader><tab> <plug>(fzf-maps-x)
-    omap <leader><tab> <plug>(fzf-maps-o)
-endif
 " }}}
 
 " {{{ ncm2
@@ -276,6 +253,33 @@ au FileType markdown setl softtabstop=4 shiftwidth=4 tabstop=4 textwidth=90 expa
 
 " xml settings
 au FileType xml setl softtabstop=8 shiftwidth=8 tabstop=8 textwidth=90 expandtab colorcolumn=79
+" }}}
+
+" {{{ FZF
+" <leader><leader> didn't work when the config was in the vim-plug section...
+" https://github.com/junegunn/dotfiles/blob/master/vimrc#L1721-L1761
+if s:uname == "Linux"
+    if has('nvim')
+        let $FZF_DEFAULT_OPTS .= ' --inline-info'
+    endif
+    nnoremap <silent> <expr> <Leader><Leader> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<cr>"
+    nnoremap <silent> <Leader>C        :Colors<CR>
+    nnoremap <silent> <Leader><Enter>  :Buffers<CR>
+    "nnoremap <silent> <Leader>ag       :Ag <C-R><C-W><CR>
+    "nnoremap <silent> <Leader>AG       :Ag <C-R><C-A><CR>
+    "xnoremap <silent> <Leader>ag       y:Ag <C-R>"<CR>
+    "nnoremap <silent> <Leader>`        :Marks<CR>
+
+    "inoremap <expr> <c-x><c-t> fzf#complete('tmuxwords.rb --all-but-current --scroll 500 --min 5')
+    "imap <c-x><c-k> <plug>(fzf-complete-word)
+    imap <c-x><c-f> <plug>(fzf-complete-path)
+    "imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+    imap <c-x><c-l> <plug>(fzf-complete-line)
+
+    nmap <leader><tab> <plug>(fzf-maps-n)
+    xmap <leader><tab> <plug>(fzf-maps-x)
+    omap <leader><tab> <plug>(fzf-maps-o)
+endif
 " }}}
 
 " {{{ custom commands
