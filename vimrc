@@ -11,100 +11,38 @@ endif
 
 " {{{ vim-plug
 call plug#begin('~/.vim/vim-plugins')
-
-" {{{ fzf
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-" }}}
-
-" {{{ ncm2
-Plug 'ncm2/ncm2' | Plug 'roxma/nvim-yarp'
-
-" enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
-
-" IMPORTANTE: :help Ncm2PopupOpen for more information
-set completeopt=noinsert,menuone,noselect
-
-" suppress the annoying 'match x of y', 'The only match' and 'Pattern not
-" found' messages
-set shortmess+=c
-
-" CTRL-C doesn't trigger the InsertLeave autocmd . map to <ESC> instead.
-inoremap <c-c> <ESC>
-
-" When the <Enter> key is pressed while the popup menu is visible, it only
-" hides the menu. Use this mapping to close the menu and also start a new
-" line.
-"inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
-
-" Use <TAB> to select the popup menu:
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-" }}}
-
-" {{{ ncm2 - misc completions
-
-" NOTE: you need to install completion sources to get completions. Check
-" our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-tmux'
-Plug 'ncm2/ncm2-path'
-" }}}
-
-" {{{ ncm2-ultisnips
-" ultisnips enables argument hinting in ncm2
-Plug 'ncm2/ncm2-ultisnips'
-Plug 'SirVer/ultisnips'
-
-" Press enter key to trigger snippet expansion
-" The parameters are the same as `:help feedkeys()`
-inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
-
-" c-j c-k for moving in snippet
-let g:UltiSnipsExpandTrigger            = "<Plug>(ultisnips_expand)"
-let g:UltiSnipsJumpForwardTrigger       = "<c-j>"
-let g:UltiSnipsJumpBackwardTrigger      = "<c-k>"
-let g:UltiSnipsRemoveSelectModeMappings = 0
-" }}}
-
-" {{{ ncm2-phpactor
-Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
-Plug 'phpactor/ncm2-phpactor'
-" }}}
-
-" {{{ vim-airline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-let g:airline_powerline_fonts = 1
-" }}}
-
-" {{{ vim-markdown
-Plug 'tpope/vim-markdown'
-let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'php', 'javascript']
-let g:markdown_syntax_conceal = 1
-" }}}
-
-" {{{ Plugins without configuration
 Plug '2072/PHP-Indenting-for-VIm'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'groenewege/vim-less'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'mcfiredrill/vim-liquidsoap'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2'
+Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-tmux'
+" ultisnips enables argument hinting in ncm2
+Plug 'ncm2/ncm2-ultisnips'
 Plug 'pangloss/vim-javascript'
 Plug 'pearofducks/ansible-vim'
+Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
+Plug 'phpactor/ncm2-phpactor'
+Plug 'roxma/nvim-yarp'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
+Plug 'SirVer/ultisnips'
 Plug 'StanAngeloff/php.vim'
 Plug 'Townk/vim-autoclose'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
+Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'wincent/loupe'
 Plug 'w0rp/ale'
-" }}}
-
 call plug#end()
 " }}}
 
@@ -280,6 +218,51 @@ if s:uname == "Linux"
     xmap <leader><tab> <plug>(fzf-maps-x)
     omap <leader><tab> <plug>(fzf-maps-o)
 endif
+" }}}
+
+" {{{ ncm2
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+
+" IMPORTANTE: :help Ncm2PopupOpen for more information
+set completeopt=noinsert,menuone,noselect
+
+" suppress the annoying 'match x of y', 'The only match' and 'Pattern not
+" found' messages
+set shortmess+=c
+
+" CTRL-C doesn't trigger the InsertLeave autocmd . map to <ESC> instead.
+inoremap <c-c> <ESC>
+
+" When the <Enter> key is pressed while the popup menu is visible, it only
+" hides the menu. Use this mapping to close the menu and also start a new
+" line.
+"inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+
+" Use <TAB> to select the popup menu:
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" }}}
+
+" {{{ ncm2-ultisnips
+" Press enter key to trigger snippet expansion
+" The parameters are the same as `:help feedkeys()`
+inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
+
+" c-j c-k for moving in snippet
+let g:UltiSnipsExpandTrigger            = "<Plug>(ultisnips_expand)"
+let g:UltiSnipsJumpForwardTrigger       = "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger      = "<c-k>"
+let g:UltiSnipsRemoveSelectModeMappings = 0
+" }}}
+
+" {{{ vim-airline
+let g:airline_powerline_fonts = 1
+" }}}
+
+" {{{ vim-markdown
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'php', 'javascript']
+let g:markdown_syntax_conceal = 1
 " }}}
 
 " {{{ custom commands
