@@ -64,3 +64,15 @@ Command  | Mode   | Description
 `ds"`    | normal | delete surround dquotes `"Hello World"` to `Hello World`
 `ysiw]`  | normal | add surround brackets `Hello World` to `[Hello] World` (iw is a text
 object)
+
+### Phpactor
+
+Commands useful for PHP development.
+
+Command | Mode   | Description
+------- | ----   | -----------
+`,u`    | normal | Include use statement for class member under the cursor
+`,mm`   | normal | Invoke the context menu
+`,nn`   | normal | Invoke the navigation menu
+`,o`    | normal | Goto definition of class or class member under the cursor
+`,K`    | normal | Show brief information about the symbol under the cursor

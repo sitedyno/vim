@@ -27,7 +27,7 @@ Plug 'ncm2/ncm2-tmux'
 Plug 'ncm2/ncm2-ultisnips'
 Plug 'pangloss/vim-javascript'
 Plug 'pearofducks/ansible-vim'
-Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
+Plug 'phpactor/phpactor',  {'do': 'composer install', 'for': 'php'}
 Plug 'phpactor/ncm2-phpactor'
 Plug 'roxma/nvim-yarp'
 Plug 'scrooloose/nerdcommenter'
@@ -263,6 +263,23 @@ let g:airline_powerline_fonts = 1
 " {{{ vim-markdown
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'php', 'javascript']
 let g:markdown_syntax_conceal = 1
+" }}}
+
+" {{{ phpactor
+" Include use statement
+nmap <Leader>u :call phpactor#UseAdd()<CR>
+
+" Invoke the context menu
+nmap <Leader>mm :call phpactor#ContextMenu()<CR>
+
+" Invoke the navigation menu
+nmap <Leader>nn :call phpactor#Navigate()<CR>
+
+" Goto definition of class or class member under the cursor
+nmap <Leader>o :call phpactor#GotoDefinition()<CR>
+
+" Show brief information about the symbol under the cursor
+nmap <Leader>K :call phpactor#Hover()<CR>
 " }}}
 
 " {{{ custom commands
