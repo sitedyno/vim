@@ -30,6 +30,7 @@ Plug 'pearofducks/ansible-vim'
 Plug 'phpactor/phpactor',  {'do': 'composer install', 'for': 'php'}
 Plug 'phpactor/ncm2-phpactor'
 Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'SirVer/ultisnips'
