@@ -283,6 +283,11 @@ nmap <Leader>o :call phpactor#GotoDefinition()<CR>
 nmap <Leader>K :call phpactor#Hover()<CR>
 " }}}
 
+ " {{{ Custom Mappings
+ nnoremap za zA
+ nnoremap zA za
+ " }}}
+
 " {{{ custom commands
 " open a terminal at the bottom of the window
 command! Layout1 sp | wincmd w | wincmd J | te
