@@ -110,6 +110,9 @@ set clipboard=unnamed
 set wildmenu
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,*.pyc,node_modules/*
+
+" Splits open at the bottom and right
+set splitbelow splitright
 " }}}
 
 " {{{ Colors
