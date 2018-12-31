@@ -26,7 +26,7 @@ Plug 'ncm2/ncm2-tmux'
 " ultisnips enables argument hinting in ncm2
 Plug 'ncm2/ncm2-ultisnips'
 Plug 'pangloss/vim-javascript'
-Plug 'pearofducks/ansible-vim'
+Plug 'pearofducks/ansible-vim', { 'do': 'cd ./UltiSnips; ./generate.py' }
 Plug 'phpactor/phpactor',  {'do': 'composer install', 'for': 'php'}
 Plug 'phpactor/ncm2-phpactor'
 Plug 'roxma/nvim-yarp'
@@ -201,6 +201,9 @@ au FileType markdown setl softtabstop=4 shiftwidth=4 tabstop=4 textwidth=90 expa
 
 " xml settings
 au FileType xml setl softtabstop=8 shiftwidth=8 tabstop=8 textwidth=90 expandtab colorcolumn=79
+
+" ansible
+au BufRead,BufNewFile playbook.*.yml set filetype=yaml.ansible
 " }}}
 
 " {{{ FZF
