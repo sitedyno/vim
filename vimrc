@@ -204,6 +204,7 @@ au FileType xml setl softtabstop=8 shiftwidth=8 tabstop=8 textwidth=90 expandtab
 
 " ansible
 au BufRead,BufNewFile playbook.*.yml set filetype=yaml.ansible
+au BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible
 " }}}
 
 " {{{ FZF
@@ -293,6 +294,11 @@ nmap <Leader>o :call phpactor#GotoDefinition()<CR>
 
 " Show brief information about the symbol under the cursor
 nmap <Leader>K :call phpactor#Hover()<CR>
+" }}}
+
+" {{{ ansible-vim
+let g:ansible_unindent_after_newline = 1
+let g:ansible_extra_keywords_highlight = 1
 " }}}
 
  " {{{ Custom Mappings
