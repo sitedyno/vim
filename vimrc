@@ -57,7 +57,12 @@ augroup END
 " {{{ Window and editor setup
 let mapleader=','
 " Display line numbers and rulers.
-set number
+set number relativenumber
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
 syntax on
 " https://github.com/neovim/neovim/issues/5938
 set mouse=a
