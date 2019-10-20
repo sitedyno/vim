@@ -186,7 +186,7 @@ au FileType rst setl textwidth=80 expandtab colorcolumn=81
 au FileType {yaml,sass,scss,ruby,eruby} setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab colorcolumn=80
 
 " php settings
-au filetype php setl textwidth=120 softtabstop=4 shiftwidth=4 tabstop=4 expandtab colorcolumn=120 foldmethod=syntax
+au filetype php setl textwidth=120 softtabstop=4 shiftwidth=4 tabstop=4 expandtab colorcolumn=120 foldmethod=syntax omnifunc=phpactor#Complete
 let g:php_folding=1
 
 " golang settings
