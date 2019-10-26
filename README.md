@@ -100,3 +100,12 @@ Command | Mode   | Description
 `,nn`   | normal | Invoke the navigation menu
 `,o`    | normal | Goto definition of class or class member under the cursor
 `,K`    | normal | Show brief information about the symbol under the cursor
+
+### UltiSnips
+
+Commands in `Snippet` mode.
+
+Command | Mode    | Description
+------- | ----    | -----------
+`<c-j>` | snippet | Jump forward to the next placeholder
+`<c-k>` | snippet | Jump backward to the previous placeholder
