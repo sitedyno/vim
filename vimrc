@@ -18,6 +18,7 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'groenewege/vim-less'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'mattn/emmet-vim'
 Plug 'mcfiredrill/vim-liquidsoap'
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2'

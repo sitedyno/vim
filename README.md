@@ -109,3 +109,7 @@ Command | Mode    | Description
 ------- | ----    | -----------
 `<c-j>` | snippet | Jump forward to the next placeholder
 `<c-k>` | snippet | Jump backward to the previous placeholder
+
+### Emmet
+
+Use `<c-y>,` to activate.
