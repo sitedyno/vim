@@ -28,7 +28,7 @@ Plug 'ncm2/ncm2-tmux'
 Plug 'ncm2/ncm2-ultisnips'
 Plug 'pangloss/vim-javascript'
 Plug 'pearofducks/ansible-vim', { 'do': 'cd ./UltiSnips; ./generate.py' }
-Plug 'phpactor/phpactor',  {'do': 'composer install', 'for': 'php'}
+Plug 'phpactor/phpactor',  {'for': 'php', 'branch': 'master', 'do': 'composer install --no-dev -o'}
 Plug 'phpactor/ncm2-phpactor'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
