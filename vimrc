@@ -208,6 +208,9 @@ au FileType markdown setl softtabstop=4 shiftwidth=4 tabstop=4 textwidth=90 expa
 " xml settings
 au FileType xml setl softtabstop=8 shiftwidth=8 tabstop=8 textwidth=90 expandtab colorcolumn=79
 
+" html
+au FileType html setl expandtab
+
 " ansible
 au BufRead,BufNewFile playbook.*.yml set filetype=yaml.ansible
 au BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible
