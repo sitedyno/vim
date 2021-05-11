@@ -166,6 +166,12 @@ map <Leader><Space> :nohl<CR>
 "hi clear SpellRare
 " }}}
 
+" {{{ Default Indentation
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+" }}}
+
 " {{{ Filetypes
 " Load the plugin and indent settings for the detected filetype
 filetype plugin indent on
