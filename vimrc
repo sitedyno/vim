@@ -13,6 +13,7 @@ endif
 call plug#begin('~/.vim/vim-plugins')
 Plug '2072/PHP-Indenting-for-VIm'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'ekalinin/Dockerfile.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'groenewege/vim-less'
